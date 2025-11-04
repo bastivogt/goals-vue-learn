@@ -30,10 +30,10 @@ export class GoalService {
   }
 
   editGoal(id, title) {
-    const goalID = this._goals.findIndex((goal) => {
+    const idx = this._goals.findIndex((goal) => {
       return goal.id === id;
     });
-    this._goals[goalID].title = title;
+    this._goals[idx].title = title;
     this._emitOnUpdated();
   }
 }
