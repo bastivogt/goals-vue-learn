@@ -22,20 +22,16 @@ export class GoalService {
 
   removeGoal(id) {
     console.log("removeGoal", "service");
-    const tempGoals = this._goals.filter((goal) => {
-      if (goal.id !== id) {
-        return goal;
-      }
+    const idx = this.goals.findIndex((goal) => {
+      return goal.id === id;
     });
-    this._goals = [...tempGoals];
+    this._goals.splice(idx, 1);
     this._emitOnUpdated();
   }
 
   editGoal(id, title) {
     const goalID = this._goals.findIndex((goal) => {
-      if (goal.id === id) {
-        return goal;
-      }
+      return goal.id === id;
     });
     this._goals[goalID].title = title;
     this._emitOnUpdated();

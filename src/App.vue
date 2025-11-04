@@ -8,6 +8,7 @@
           <Goal :goal="goal" />
         </li>
       </ul>
+      <p v-else>No Goal available.</p>
     </div>
   </div>
 </template>
